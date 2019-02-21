@@ -1,4 +1,4 @@
-﻿namespace IntroToMEF
+﻿namespace IntroToMEF.Interfaces
 {
     public interface IModule
     {

@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{203137B1-F526-42E7-BD2E-0FAAB6424532}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{8957DE41-5C98-4016-ACFF-90EB43A3C43B}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IntroToMEF</RootNamespace>
-    <AssemblyName>IntroToMEF</AssemblyName>
+    <RootNamespace>IntroToMEF.Modules</RootNamespace>
+    <AssemblyName>IntroToMEF.Modules</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,21 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Menu.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
+    <Compile Include="Supplier.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IntroToMEF.Interfaces\IntroToMEF.Interfaces.csproj">
       <Project>{bc106fd7-f8a9-4e4f-bbbc-8f7fa1269b4e}</Project>
       <Name>IntroToMEF.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IntroToMEF.Modules\IntroToMEF.Modules.csproj">
-      <Project>{8957de41-5c98-4016-acff-90eb43a3c43b}</Project>
-      <Name>IntroToMEF.Modules</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

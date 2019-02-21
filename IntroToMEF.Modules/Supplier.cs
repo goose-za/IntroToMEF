@@ -1,6 +1,7 @@
-﻿using System.ComponentModel.Composition;
+﻿using IntroToMEF.Interfaces;
+using System.ComponentModel.Composition;
 
-namespace IntroToMEF
+namespace IntroToMEF.Modules
 {
     /// <summary>
     /// Our class will implement this interface (IModule) and the export 

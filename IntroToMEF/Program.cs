@@ -13,9 +13,14 @@ namespace IntroToMEF
     {
         static void Main(string[] args)
         {
-            // We have created an AssemblyCatalog (that searches the parts in the assembly 
-            // – in our case, in the current assembly)
-            var catalog = new AssemblyCatalog(Assembly.GetExecutingAssembly());
+            // Now we need to tell that our parts are not only in the current assembly, 
+            // but they can also be found in the current folder.For that we must compose 
+            // two catalogs: one for the current assembly(for the imported parts) and 
+            // another for the folder (for the exported parts).We will use an AggregateCatalog 
+            // to compose both catalogs
+            var catalog = new AggregateCatalog(
+                new AssemblyCatalog(Assembly.GetExecutingAssembly()),
+                new DirectoryCatalog("."));
 
             // created the container that composes the parts after the menu is created
             var container = new CompositionContainer(catalog);
