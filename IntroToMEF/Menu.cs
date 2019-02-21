@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.Composition;
 
 namespace IntroToMEF
@@ -9,12 +10,21 @@ namespace IntroToMEF
     /// </summary>
     public class Menu
     {
-        [Import]
-        private IModule _module;
+        [ImportMany]
+        private IEnumerable<IModule> _modules;
 
+        /// <summary>
+        /// List all the modules.
+        /// </summary>
         public void OptionList()
         {
-            Console.WriteLine(_module.Title);
+            // iterate over all the modules that we find
+            foreach (var module in _modules)
+            {
+                // write to console 
+                Console.WriteLine(module.Title);
+            }
+            
         }
     }
 }

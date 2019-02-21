@@ -7,11 +7,11 @@ namespace IntroToMEF
     /// will tell that we are exporting the IModule interface
     /// </summary>
     [Export(typeof(IModule))]
-    public class Module : IModule
+    public class Product : IModule
     {
-        public Module()
+        public Product()
         {
-            Title = "Customers";
+            Title = "Products";
         }
 
         public string Title { get; set; }
