@@ -1,14 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.Composition;
 
 namespace IntroToMEF
 {
+    /// <summary>
+    /// In order to match the parts, we must say 
+    /// that the imported part is also of the IModule type
+    /// </summary>
     public class Menu
     {
-        private Module _module;
+        [Import]
+        private IModule _module;
 
         public void OptionList()
         {
